@@ -1,4 +1,3 @@
-import { useServerFn } from "@tanstack/react-start";
 import { CheckCircle2, Loader2, Send } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -7,12 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { contactSchema, sendContactMessage } from "@/lib/contact.functions";
+import { contactSchema } from "@/lib/contact.functions";
 
 type Errors = Partial<Record<"name" | "email" | "message", string>>;
 
 export function ContactForm() {
-  const send = useServerFn(sendContactMessage);
   const [values, setValues] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [pending, setPending] = useState(false);
@@ -34,12 +32,18 @@ export function ContactForm() {
 
     setErrors({});
     setPending(true);
+
     try {
-      await send({ data: parsed.data });
+      const subject = encodeURIComponent(`Demande de contact de ${parsed.data.name}`);
+      const body = encodeURIComponent(
+        `Nom : ${parsed.data.name}\nEmail : ${parsed.data.email}\n\nMessage :\n${parsed.data.message}`,
+      );
+
+      window.location.href = `mailto:contact@kaantaa.sn?subject=${subject}&body=${body}`;
       setSent(true);
       setValues({ name: "", email: "", message: "" });
-      toast.success("Message envoyé", {
-        description: "Merci ! Nous vous répondons sous 24 heures ouvrées.",
+      toast.success("Message préparé", {
+        description: "Votre client email s'ouvre avec le message prêt à envoyer.",
       });
     } catch {
       toast.error("Envoi impossible", {

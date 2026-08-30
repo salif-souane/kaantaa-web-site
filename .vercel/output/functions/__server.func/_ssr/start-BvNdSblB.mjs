@@ -1,7 +1,7 @@
-import { n as createCsrfMiddleware, r as createMiddleware } from "./server-DBH_d4jF.mjs";
+import { n as createCsrfMiddleware, r as createMiddleware } from "./server-C_gvGMVV.mjs";
 import { t as renderErrorPage } from "./ssr.mjs";
 import { t as createClient } from "../_libs/supabase__supabase-js.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/start-CC3PebtB.js
+//#region node_modules/.nitro/vite/services/ssr/assets/start-BvNdSblB.js
 function dedupeSerializationAdapters(deduped, serializationAdapters) {
 	for (let i = 0, len = serializationAdapters.length; i < len; i++) {
 		const current = serializationAdapters[i];
@@ -40,6 +40,43 @@ function createSupabaseFetch(supabaseKey) {
 		});
 	};
 }
+function hasSupabaseConfig() {
+	const SUPABASE_URL = {
+		"BASE_URL": "/",
+		"DEV": false,
+		"MODE": "production",
+		"PROD": true,
+		"SSR": true,
+		"TSS_DEV_SERVER": "false",
+		"TSS_DEV_SSR_STYLES_BASEPATH": "/",
+		"TSS_DEV_SSR_STYLES_ENABLED": "true",
+		"TSS_DISABLE_CSRF_MIDDLEWARE_WARNING": "false",
+		"TSS_INLINE_CSS_ENABLED": "false",
+		"TSS_ROUTER_BASEPATH": "",
+		"TSS_SERVER_FN_BASE": "/_serverFn/",
+		"VITE_SUPABASE_PROJECT_ID": "bapcpeyrynamfydlqhuf",
+		"VITE_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_PmjN3Y-p43pUmBL9AJwDUA_1MRPqhwI",
+		"VITE_SUPABASE_URL": "https://bapcpeyrynamfydlqhuf.supabase.co"
+	}["VITE_SUPABASE_URL"] || process.env["SUPABASE_URL"];
+	const SUPABASE_PUBLISHABLE_KEY = {
+		"BASE_URL": "/",
+		"DEV": false,
+		"MODE": "production",
+		"PROD": true,
+		"SSR": true,
+		"TSS_DEV_SERVER": "false",
+		"TSS_DEV_SSR_STYLES_BASEPATH": "/",
+		"TSS_DEV_SSR_STYLES_ENABLED": "true",
+		"TSS_DISABLE_CSRF_MIDDLEWARE_WARNING": "false",
+		"TSS_INLINE_CSS_ENABLED": "false",
+		"TSS_ROUTER_BASEPATH": "",
+		"TSS_SERVER_FN_BASE": "/_serverFn/",
+		"VITE_SUPABASE_PROJECT_ID": "bapcpeyrynamfydlqhuf",
+		"VITE_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_PmjN3Y-p43pUmBL9AJwDUA_1MRPqhwI",
+		"VITE_SUPABASE_URL": "https://bapcpeyrynamfydlqhuf.supabase.co"
+	}["VITE_SUPABASE_PUBLISHABLE_KEY"] || process.env["SUPABASE_PUBLISHABLE_KEY"];
+	return Boolean(SUPABASE_URL && SUPABASE_PUBLISHABLE_KEY);
+}
 function createSupabaseClient() {
 	const SUPABASE_URL = {
 		"BASE_URL": "/",
@@ -76,9 +113,8 @@ function createSupabaseClient() {
 		"VITE_SUPABASE_URL": "https://bapcpeyrynamfydlqhuf.supabase.co"
 	}["VITE_SUPABASE_PUBLISHABLE_KEY"] || process.env["SUPABASE_PUBLISHABLE_KEY"];
 	if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
-		const message = `Missing Supabase environment variable(s): ${[...!SUPABASE_URL ? ["SUPABASE_URL"] : [], ...!SUPABASE_PUBLISHABLE_KEY ? ["SUPABASE_PUBLISHABLE_KEY"] : []].join(", ")}. Connect Supabase in Lovable Cloud.`;
-		console.error(`[Supabase] ${message}`);
-		throw new Error(message);
+		console.warn("[Supabase] Config missing: continuing without Supabase client until environment variables are configured.");
+		return;
 	}
 	return createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
 		global: { fetch: createSupabaseFetch(SUPABASE_PUBLISHABLE_KEY) },
@@ -92,9 +128,11 @@ function createSupabaseClient() {
 var _supabase;
 var supabase = new Proxy({}, { get(_, prop, receiver) {
 	if (!_supabase) _supabase = createSupabaseClient();
+	if (!_supabase) return void 0;
 	return Reflect.get(_supabase, prop, receiver);
 } });
 var attachSupabaseAuth = createMiddleware({ type: "function" }).client(async ({ next }) => {
+	if (!hasSupabaseConfig()) return next({ headers: {} });
 	const { data } = await supabase.auth.getSession();
 	const token = data.session?.access_token;
 	return next({ headers: token ? { Authorization: `Bearer ${token}` } : {} });

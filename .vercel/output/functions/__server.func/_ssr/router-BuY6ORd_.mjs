@@ -8,8 +8,8 @@ import { C as Instagram, D as Facebook, _ as MapPin, d as Music2, m as Menu, p a
 import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
-import { i as __exportAll } from "./server-DBH_d4jF.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-C5CBHS1A.js
+import { i as __exportAll } from "./server-C_gvGMVV.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BuY6ORd_.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var logo_kaantaa_default = "/assets/logo-kaantaa-Fx9h5xAe.png";
@@ -597,7 +597,7 @@ function RootComponent() {
 		]
 	});
 }
-var $$splitComponentImporter$4 = () => import("./routes-DN04scIG.mjs");
+var $$splitComponentImporter$4 = () => import("./routes-KRqwWBB_.mjs");
 var title$4 = "KAANTAA — Tracking GPS pour motos et voitures à Ziguinchor";
 var description$4 = "ENTREPRISE KAANTAA sécurise vos véhicules en temps réel : tracker GPS, application web, alertes et installation locale à Ziguinchor et partout au Sénégal.";
 var Route$5 = createFileRoute("/")({
@@ -655,7 +655,7 @@ var Route$5 = createFileRoute("/")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-var $$splitComponentImporter$3 = () => import("./a-propos-DbcMzIgC.mjs");
+var $$splitComponentImporter$3 = () => import("./a-propos-D81QEo4C.mjs");
 var title$3 = "À propos — Startup de géolocalisation à Ziguinchor | KAANTAA";
 var description$3 = "Créée en 2025 à Ziguinchor, ENTREPRISE KAANTAA sécurise et digitalise les transports en Casamance. Découvrez notre mission, nos valeurs et notre équipe.";
 var Route$4 = createFileRoute("/a-propos")({
@@ -694,7 +694,7 @@ var Route$4 = createFileRoute("/a-propos")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./contact-CaLNg7ba.mjs");
+var $$splitComponentImporter$2 = () => import("./contact-5KN60G9s.mjs");
 var title$2 = "Contact — Installation GPS à Ziguinchor | KAANTAA";
 var description$2 = "Contactez ENTREPRISE KAANTAA : Quartier Kenya près de la caserne à Ziguinchor, WhatsApp, email contact@kaantaa.sn et formulaire de demande d'installation GPS.";
 var Route$3 = createFileRoute("/contact")({
@@ -733,7 +733,7 @@ var Route$3 = createFileRoute("/contact")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./offres-DEgwhcGT.mjs");
+var $$splitComponentImporter$1 = () => import("./offres-wMjk_AVW.mjs");
 var title$1 = "Offres et tarifs — Packs GPS moto et voiture | KAANTAA";
 var description$1 = "Pack Moto à 30 000 F, Pack Voiture à 50 000 F, renouvellement annuel à 10 000 F et abonnements mensuels pour organismes. Tarifs clairs, installation incluse.";
 var Route$2 = createFileRoute("/offres")({
@@ -772,7 +772,7 @@ var Route$2 = createFileRoute("/offres")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./services-eRP4lxSm.mjs");
+var $$splitComponentImporter = () => import("./services-D20linIX.mjs");
 var title = "Services — Tracking GPS, digitalisation et flotte | KAANTAA";
 var description = "Tracking GPS en temps réel, création d'applications web et vidéos, gestion de flotte et partage de courses : découvrez les services d'ENTREPRISE KAANTAA à Ziguinchor.";
 var Route$1 = createFileRoute("/services")({

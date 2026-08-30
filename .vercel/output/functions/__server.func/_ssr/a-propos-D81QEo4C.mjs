@@ -1,9 +1,9 @@
 import { i as require_jsx_runtime } from "../_libs/@radix-ui/react-label+[...].mjs";
 import { S as Lightbulb, T as HeartHandshake, a as ShieldCheck, g as MapPinned, i as Sparkles } from "../_libs/lucide-react.mjs";
-import { i as site } from "./router-C5CBHS1A.mjs";
-import { t as Reveal } from "./Reveal-ibYPdWzH.mjs";
-import { r as SectionHeading, t as CtaBand } from "./Sections-BGRRTD5_.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/a-propos-DbcMzIgC.js
+import { i as site } from "./router-BuY6ORd_.mjs";
+import { t as Reveal } from "./Reveal-uDemLCZo.mjs";
+import { r as SectionHeading, t as CtaBand } from "./Sections-De7L_e7k.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/a-propos-D81QEo4C.js
 var import_jsx_runtime = require_jsx_runtime();
 var equipe_default = "/assets/equipe-D3VYriOu.jpg";
 var values = [
@@ -151,15 +151,15 @@ function AProposPage() {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "mt-12 grid gap-6 md:grid-cols-2",
 					children: [{
-						name: "Salif",
-						role: "Fondateur & Développeur Full-stack",
+						name: "SALIF SOsUANE",
+						role: "CEO et CO-Fondateur & Développeur Full-stack",
 						text: "Il conçoit l'application, choisit le matériel GPS et forme les techniciens installateurs.",
 						initials: "S"
 					}, {
-						name: "Co-fondatrice",
-						role: "Cofondatrice & Responsable opérationnelle",
-						text: "Elle pilote les installations, la relation clients et les partenariats avec les garages et les ONG.",
-						initials: "K"
+						name: "AIDA DIATTA",
+						role: "Co-fondatrice & Responsable opérationnelle",
+						text: "Elle pilote les relations clients et les partenariats avec les garages et les ONG.",
+						initials: "A"
 					}].map((member, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Reveal, {
 						as: "article",
 						delay: index * 90,
