@@ -10,7 +10,8 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "deploy": "gh-pages -d dist",
+    "build:pages": "vite build --config vite.pages.config.ts",
+    "deploy": "npm run build:pages && gh-pages -d .output/public",
     "format": "prettier --write ."
   },
   "dependencies": {

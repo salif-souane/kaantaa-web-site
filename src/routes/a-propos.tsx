@@ -141,16 +141,16 @@ function AProposPage() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {[
             {
-              name: "Salif",
-              role: "Fondateur & Développeur Full-stack",
+              name: "SALIF SOsUANE",
+              role: "CEO et CO-Fondateur & Développeur Full-stack",
               text: "Il conçoit l'application, choisit le matériel GPS et forme les techniciens installateurs.",
               initials: "S",
             },
             {
-              name: "Co-fondatrice",
-              role: "Cofondatrice & Responsable opérationnelle",
-              text: "Elle pilote les installations, la relation clients et les partenariats avec les garages et les ONG.",
-              initials: "K",
+              name: "AIDA DIATTA",
+              role: "Co-fondatrice & Responsable opérationnelle",
+              text: "Elle pilote les relations clients et les partenariats avec les garages et les ONG.",
+              initials: "A",
             },
           ].map((member, index) => (
             <Reveal
